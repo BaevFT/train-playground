@@ -1,6 +1,6 @@
 const http = require('http');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8765;
 const fullSchedule = [];
 let requestNo = 0;
 console.log('Started schedule generation');
@@ -34,6 +34,6 @@ http.createServer((req, res) => {
   console.log(`[${new Date().toISOString()}] Request no ${++requestNo}`);
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Cross-Origin-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.end(JSON.stringify(fullSchedule));
 }).listen(port);
