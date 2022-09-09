@@ -15,8 +15,9 @@ for (let i = 0; i < batchSize; i++) {
   while (departureCity === arrivalCity)
     arrivalCity = cities[Math.floor(Math.random() * cities.length)];
   let number = Math.floor(Math.random() * 999) + 1;
-  while (usedNums.includes(number))
+  while (usedNums.includes(number)) 
     number = Math.floor(Math.random() * 999) + 1;
+  usedNums.push(number);
   const departureTime = Math.floor(Math.random() * 24 * 60);
   const travelTime = Math.floor(Math.random() * 3 * 24 * 60) + 100;
   fullSchedule.push({
