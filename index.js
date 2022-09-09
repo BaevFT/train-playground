@@ -34,5 +34,6 @@ http.createServer((req, res) => {
   console.log(`[${new Date().toISOString()}] Request no ${++requestNo}`);
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Cross-Origin-Allow-Origin', '*');
   res.end(JSON.stringify(fullSchedule));
 }).listen(port);
